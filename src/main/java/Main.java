@@ -1,3 +1,4 @@
+import entity.HibernateDao;
 import entity.Player;
 
 /**

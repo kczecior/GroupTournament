@@ -1,3 +1,5 @@
+package entity;
+
 import org.hibernate.Session;
 
 public class HibernateDao<T> {
