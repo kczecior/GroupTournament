@@ -5,9 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by RENT on 2017-09-19.
- */
 @Entity
 public class Player {
     @Id
