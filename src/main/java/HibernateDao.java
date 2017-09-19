@@ -7,6 +7,4 @@ public class HibernateDao<T> {
     public HibernateDao( Class clazz ) {
         this.clazz = clazz;
     }
-
-
 }
