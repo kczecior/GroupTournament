@@ -15,9 +15,9 @@ public class Match {
     private boolean finished;
     private int round;
     private LocalDateTime occurenceDateTime;
-    @OneToOne
+    @ManyToOne
     private Player player1;
-    @OneToOne
+    @ManyToOne
     private Player player2;
 
     public Match() {

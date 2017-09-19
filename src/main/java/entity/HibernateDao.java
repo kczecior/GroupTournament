@@ -10,11 +10,6 @@ public class HibernateDao<T> {
         this.clazz = clazz;
     }
 
-    public void closeSessionWithCommit() {
-        session.getTransaction().commit();
-        session.close();
-    }
-
     public void add( T entity ) {
         session.save(entity);
     }
