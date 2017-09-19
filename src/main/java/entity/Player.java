@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Player {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
@@ -13,23 +13,24 @@ public class Player {
     private Match match;
 
 
-    public Player(String firstName, String lastName, String username) {
+    public Player( String firstName, String lastName, String username ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
     }
 
-    public Player() {}
+    public Player() {
+    }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName( String firstName ) {
         this.firstName = firstName;
     }
 
-    public void setMatch(Match match) {
+    public void setMatch( Match match ) {
         this.match = match;
     }
 
@@ -37,7 +38,7 @@ public class Player {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName( String lastName ) {
         this.lastName = lastName;
     }
 
@@ -45,7 +46,7 @@ public class Player {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername( String username ) {
         this.username = username;
     }
 }
