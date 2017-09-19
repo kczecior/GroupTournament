@@ -16,6 +16,8 @@ public class Player {
     private String firstName;
     private String lastName;
     private String username;
+    private Match match;
+
 
     public Player(String firstName, String lastName, String username) {
         this.firstName = firstName;
@@ -31,6 +33,10 @@ public class Player {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public void setMatch(Match match) {
+        this.match = match;
     }
 
     public String getLastName() {
