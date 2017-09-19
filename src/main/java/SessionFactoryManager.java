@@ -1,3 +1,4 @@
+import entity.Match;
 import entity.Player;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -12,7 +13,7 @@ public class SessionFactoryManager {
     public static SessionFactory getSessionFactory() {
         if(sessionFactory == null) {
             StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
-                    .applySetting("hibernate.connection.url", "jdbc:mysql://localhost:3306/persondb")
+                    .applySetting("hibernate.connection.url", "jdbc:mysql://localhost:3306/football")
                     .applySetting("hibernate.connection.username", "root")
                     .applySetting("hibernate.connection.password", "")
                     .applySetting("hibernate.connection.driver", "com.mysql.jdbc.Driver")
@@ -22,7 +23,8 @@ public class SessionFactoryManager {
                     .applySetting("hibernat.format_sql",true)
                     .build();
             MetadataSources metadataSources = new MetadataSources(standardServiceRegistry)
-                    .addAnnotatedClass(Player.class);
+                    .addAnnotatedClass(Player.class)
+                    .addAnnotatedClass(Match.class);
             Metadata metadata = metadataSources.buildMetadata();
             sessionFactory = metadata.buildSessionFactory();
         }
