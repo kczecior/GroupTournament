@@ -1,3 +1,4 @@
+import entity.Player;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -22,7 +23,7 @@ public class SessionFactoryManager {
                     .applySetting("hibernat.format_sql",true)
                     .build();
             MetadataSources metadataSources = new MetadataSources(standardServiceRegistry)
-                    .addAnnotatedClass(Person.class);
+                    .addAnnotatedClass(Player.class);
             Metadata metadata = metadataSources.buildMetadata();
             sessionFactory = metadata.buildSessionFactory();
         }
