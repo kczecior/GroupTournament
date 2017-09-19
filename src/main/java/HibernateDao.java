@@ -7,4 +7,26 @@ public class HibernateDao<T> {
     public HibernateDao( Class clazz ) {
         this.clazz = clazz;
     }
+
+    public void closeSessionWithCommit() {
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public void add( T entity ) {
+        session.save(entity);
+    }
+
+    public void update( T entity ) {
+        session.update(entity);
+    }
+
+    public T get( int id ) {
+        return session.get(clazz, id);
+    }
+
+    public void delete( int id ) {
+        T entity = session.get(clazz, id);
+        session.delete(entity);
+    }
 }
