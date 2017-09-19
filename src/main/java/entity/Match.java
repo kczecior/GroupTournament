@@ -1,9 +1,6 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -18,7 +15,9 @@ public class Match {
     private boolean finished;
     private int round;
     private LocalDateTime occurenceDateTime;
+    @OneToOne
     private Player player1;
+    @OneToOne
     private Player player2;
 
     public Match() {
@@ -27,8 +26,6 @@ public class Match {
     public Match(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
-        player1.setMatch(this);
-        player2.setMatch(this);
     }
 
     public int getPlayer1Score() {
