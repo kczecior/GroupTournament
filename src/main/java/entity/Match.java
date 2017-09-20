@@ -21,7 +21,7 @@ public class Match {
     private LocalDateTime occurrenceDateTime;
     private int round;
 
-    public Match() {}
+    public Match( Player player1, Player player2, int i ) {}
 
     public Match(Player player1, Player player2, int round) {
         this.player1 = player1;
