@@ -15,7 +15,7 @@ public class SessionFactoryManager {
             StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
                     .applySetting("hibernate.connection.url", "jdbc:mysql://localhost:3306/a")
                     .applySetting("hibernate.connection.username", "root")
-                    .applySetting("hibernate.connection.password", "")
+                    .applySetting("hibernate.connection.password", "Taternik1234")
                     .applySetting("hibernate.connection.driver", "com.mysql.jdbc.Driver")
                     .applySetting("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect")
                     .applySetting("hibernate.dialect.storage_engine", "innodb")
