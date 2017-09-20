@@ -13,7 +13,7 @@ public class SessionFactoryManager {
     public static SessionFactory getSessionFactory() {
         if(sessionFactory == null) {
             StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
-                    .applySetting("hibernate.connection.url", "jdbc:mysql://localhost:3306/a")
+                    .applySetting("hibernate.connection.url", "jdbc:mysql://localhost:3306/football")
                     .applySetting("hibernate.connection.username", "root")
                     .applySetting("hibernate.connection.password", "")
                     .applySetting("hibernate.connection.driver", "com.mysql.jdbc.Driver")

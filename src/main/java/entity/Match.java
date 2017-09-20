@@ -23,12 +23,11 @@ public class Match {
 
     public Match() {}
 
-    public Match(Player player1, Player player2, LocalDateTime occurrenceDateTime, int round) {
+    public Match(Player player1, Player player2, int round) {
         this.player1 = player1;
         this.player1.addMatchAsPlayer1(this);
         this.player2 = player2;
         this.player2.addMatchAsPlayer2(this);
-        this.occurrenceDateTime = occurrenceDateTime;
         this.round = round;
         this.finished = false;
     }
@@ -65,5 +64,6 @@ public class Match {
         this.player1Score = player1Score;
         this.player2Score = player2Score;
         this.finished = true;
+        this.occurrenceDateTime = LocalDateTime.now();
     }
 }
