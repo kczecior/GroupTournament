@@ -1,5 +1,6 @@
 import entity.Match;
 import entity.Player;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -18,6 +19,7 @@ public class SessionFactoryManager {
                     .applySetting("hibernate.connection.password", "")
                     .applySetting("hibernate.connection.driver", "com.mysql.jdbc.Driver")
                     .applySetting("hibernate.connection.dialect", "org.hibernate.dialect.MySQLDialect")
+                    .applySetting("hibernate.dialect.storage_engine", "innodb")
                     .applySetting("hibernate.hbm2ddl.auto", "create")
                     .applySetting("hibernate.show_sql", true)
                     .applySetting("hibernat.format_sql",true)

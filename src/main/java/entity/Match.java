@@ -23,9 +23,10 @@ public class Match {
     public Match() {
     }
 
-    public Match( Player player1, Player player2 ) {
+    public Match( Player player1, Player player2, int round ) {
         this.player1 = player1;
         this.player2 = player2;
+        this.round = round;
     }
 
     public int getPlayer1Score() {
