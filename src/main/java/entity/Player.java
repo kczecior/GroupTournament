@@ -1,6 +1,9 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Player {
@@ -11,37 +14,43 @@ public class Player {
     private String lastName;
     private String username;
 
+    @OneToMany(mappedBy = "player1")
+    private Set<Match> matchesAsPlayer1 = new HashSet<>();
+    @OneToMany(mappedBy = "player2")
+    private Set<Match> matchesAsPlayer2 = new HashSet<>();
 
-    public Player( String firstName, String lastName, String username ) {
+    public Player() {}
+
+    public Player(String firstName, String lastName, String username) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
-    }
-
-    public Player() {
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName( String firstName ) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName( String lastName ) {
-        this.lastName = lastName;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername( String username ) {
-        this.username = username;
+    void addMatchAsPlayer1(Match match) {
+        matchesAsPlayer1.add(match);
+    }
+
+    void addMatchAsPlayer2(Match match) {
+        matchesAsPlayer2.add(match);
+    }
+
+    public Set<Match> getMatches() {
+        Set<Match> matches = new HashSet<>();
+        matches.addAll(matchesAsPlayer1);
+        matches.addAll(matchesAsPlayer2);
+        return Collections.unmodifiableSet(matches);
     }
 }
